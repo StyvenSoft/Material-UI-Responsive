@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Button, makeStyles } from '@material-ui/core';
 import { Person } from '@material-ui/icons';
+import Navbar from './components/Navbar';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -15,6 +16,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <Navbar />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
