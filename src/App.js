@@ -1,7 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import { Button, makeStyles } from '@material-ui/core';
+import { Person } from '@material-ui/icons';
 
-function App() {
+const useStyles = makeStyles({
+  button: {
+    color: "white",
+    backgroundColor: "black"
+  }
+})
+
+const App = () => {
+
+  const classes = useStyles();
+
   return (
     <div className="App">
       <header className="App-header">
@@ -9,14 +21,14 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Button 
+          variant="contained" 
+          color="primary"
+          startIcon={<Person />}
+          className={classes.button}
         >
-          Learn React
-        </a>
+          Primary
+        </Button>
       </header>
     </div>
   );
