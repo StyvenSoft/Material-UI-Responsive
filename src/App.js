@@ -3,12 +3,11 @@ import './App.css';
 import { Button, makeStyles } from '@material-ui/core';
 import { Person } from '@material-ui/icons';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   button: {
-    color: "white",
-    backgroundColor: "black"
-  }
-})
+    ...theme.myButton
+  },
+}));
 
 const App = () => {
 
