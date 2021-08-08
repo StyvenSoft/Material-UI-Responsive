@@ -1,6 +1,7 @@
 import { alpha, AppBar, Badge, makeStyles, Toolbar, Typography } from '@material-ui/core';
-import { Mail, Notifications, Search } from '@material-ui/icons';
+import { Cancel, Mail, Notifications, Search } from '@material-ui/icons';
 import InputBase from '@material-ui/core/InputBase';
+import React, { useState } from 'react';
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -28,18 +29,26 @@ const useStyles = makeStyles((theme) => ({
     },
     borderRadius: theme.shape.borderRadius,
     [theme.breakpoints.down('sm')]: {
-      display: 'none',
+      display: (props) => (props.open ? 'flex' : 'none'),
     },
   },
   input: {
     color: "white",
     marginLeft: theme.spacing(1),
   },
+  cancel: {
+    [theme.breakpoints.up('sm')]: {
+      display: "none",
+    },
+  },
   searchButton: {
     marginRight: theme.spacing(2),
+    [theme.breakpoints.up('sm')]: {
+      display: 'none',
+    },
   },
   icons: {
-    display: "flex",
+    display: (props) => (props.open ? 'none' : 'flex'),
     alingItems: "center",
   },
   badge: {
@@ -49,7 +58,8 @@ const useStyles = makeStyles((theme) => ({
 
 const Navbar = () => {
 
-  const classes = useStyles();
+  const [open, setOpen] = useState(false);
+  const classes = useStyles({ open });
 
   return (
     <AppBar>
@@ -63,9 +73,13 @@ const Navbar = () => {
           <div className={classes.search}>
             <Search />
             <InputBase className={classes.input} placeholder="Search..." />
+            <Cancel className={classes.cancel} onClick={() => setOpen(false)} />
           </div>
           <div className={classes.icons}>
-            <Search className={classes.searchButton} />
+            <Search 
+              className={classes.searchButton}
+              onClick={() => setOpen(true)}
+            />
             <Badge className={classes.badge} badgeContent={4} color="secondary">
               <Mail />
             </Badge>
