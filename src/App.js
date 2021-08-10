@@ -9,6 +9,11 @@ const useStyles = makeStyles((theme) => ({
   button: {
     ...theme.myButton
   },
+  right: {
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
+  },
 }));
 
 const App = () => {
@@ -19,10 +24,10 @@ const App = () => {
     <div className="App">
       <Navbar />
       <Grid container>
-        <Grid item sm={2}>
+        <Grid item sm={2} xs={2}>
           <Leftbar />
         </Grid>
-        <Grid item sm={7}>
+        <Grid item sm={7} xs={10}>
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <p>
@@ -38,7 +43,7 @@ const App = () => {
             </Button>
           </header>
         </Grid>
-        <Grid item sm={3}></Grid>
+        <Grid item sm={3} className={classes.right}></Grid>
       </Grid>
     </div>
   );
