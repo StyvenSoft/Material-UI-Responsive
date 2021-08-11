@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
     },
     media: {
         height: 250,
+        [theme.breakpoints.up("sm")]: {
+            height: 150,
+        },
     },
 }));
 
@@ -31,7 +34,7 @@ const Post = () => {
                 />
             </CardActionArea>
             <CardContent>
-                <Typography variant="h5">My first Post</Typography>
+                <Typography gutterBottom variant="h5">My first Post</Typography>
                 <Typography variant="body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quia corporis nemo esse hic debitis commodi enim! Quibusdam architecto eum, nam nemo laboriosam excepturi doloribus quisquam veritatis sint, pariatur sunt.</Typography>
             </CardContent>
             <CardActions>
