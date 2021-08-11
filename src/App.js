@@ -4,6 +4,7 @@ import { Button, Grid, makeStyles } from '@material-ui/core';
 import { Person } from '@material-ui/icons';
 import Navbar from './components/Navbar';
 import Leftbar from './components/Leftbar';
+import Feed from './components/Feed';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -42,6 +43,7 @@ const App = () => {
               Primary
             </Button>
           </header>
+          <Feed />
         </Grid>
         <Grid item sm={3} className={classes.right}></Grid>
       </Grid>
