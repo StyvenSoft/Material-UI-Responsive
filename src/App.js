@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Leftbar from './components/Leftbar';
 import Feed from './components/Feed';
 import Add from './components/Add';
+import Rightbar from './components/Rightbar';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -46,7 +47,9 @@ const App = () => {
           </header>
           <Feed />
         </Grid>
-        <Grid item sm={3} className={classes.right}></Grid>
+        <Grid item sm={3} className={classes.right}>
+          <Rightbar />
+        </Grid>
       </Grid>
       <Add />
     </div>
