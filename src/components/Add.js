@@ -94,26 +94,26 @@ const Add = () => {
                             </RadioGroup>
                         </div>
                         <div className={classes.item}>
-                            <Button 
-                                variant="outlined" 
-                                color="primary" 
+                            <Button
+                                variant="outlined"
+                                color="primary"
                                 style={{ marginRight: 20 }}
-                                onClick={() => setOpenAlert(true)}
+                                onClick={() => { setOpenAlert(true); setOpen(false); }}
                             >Create</Button>
-                            <Button 
-                                variant="outlined" 
-                                color="secondary" 
+                            <Button
+                                variant="outlined"
+                                color="secondary"
                                 onClick={() => setOpen(false)}
                             >Cancel</Button>
                         </div>
                     </form>
                 </Container>
             </Modal>
-            <Snackbar 
-                open={openAlert} 
-                autoHideDuration={6000} 
+            <Snackbar
+                open={openAlert}
+                autoHideDuration={6000}
                 onClose={handleClose}
-                anchorOrigin={{ vertical: "bottom", horizontal: "left"}}
+                anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
             >
                 <Alert onClose={handleClose} severity="success">
                     This is a test creation message!

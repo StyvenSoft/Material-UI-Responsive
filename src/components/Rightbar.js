@@ -1,21 +1,29 @@
-import { 
-        Avatar, 
-        Container, 
-        makeStyles, 
-        Typography 
+import {
+    Avatar,
+    Container,
+    ImageList,
+    ImageListItem,
+    makeStyles,
+    Typography
 } from '@material-ui/core';
 import { AvatarGroup } from '@material-ui/lab';
 
 const useStyles = makeStyles((theme) => ({
     container: {
         paddingTop: theme.spacing(10),
+    },
+    title: {
+        fontSize: 16,
+        fontWeight: 500,
+        color: "#555",
+        marginBottom: theme.spacing(2)
     }
 }));
 
 const Rightbar = () => {
     const classes = useStyles();
     return <Container className={classes.container}>
-        <Typography>Online Friends</Typography>
+        <Typography className={classes.title}>Online Friends</Typography>
         <AvatarGroup max={4}>
             <Avatar alt="Remy Sharp" src="https://material-ui.com/static/images/avatar/1.jpg" />
             <Avatar alt="Travis Howard" src="https://material-ui.com/static/images/avatar/2.jpg" />
@@ -23,6 +31,12 @@ const Rightbar = () => {
             <Avatar alt="Agnes Walker" src="https://material-ui.com/static/images/avatar/4.jpg" />
             <Avatar alt="Trevor Henderson" src="https://material-ui.com/static/images/avatar/5.jpg" />
         </AvatarGroup>
+        <Typography className={classes.title}>Gallery</Typography>
+        <ImageList>
+            <ImageListItem>
+                <img src="https://material-ui.com/static/images/image-list/morning.jpg" alt="Imagen" />
+            </ImageListItem>
+        </ImageList>
     </Container>;
 };
 
